@@ -1,0 +1,186 @@
+<!doctype html>
+<html lang="uk">
+<head>
+<meta charset="utf-8">
+<meta name="robots" content="noindex">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Benson — оптовий каталог посуду та техніки</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css?v=1795260079">
+</head>
+<body>
+
+<div class="topbar">
+  <div class="wrap">
+    <nav>
+      <a href="#">Про нас</a>
+      <a href="#">Умови співпраці</a>
+      <a href="#">Доставка</a>
+      <a href="#">Контакти</a>
+    </nav>
+    <span class="spacer"></span>
+    <span>Пн–Сб 08:00–17:00</span>
+    <div class="lang"><a class="on" href="#">UA</a><a href="#">EN</a><a href="#">RU</a></div>
+  </div>
+</div>
+
+<header class="header">
+  <div class="wrap">
+    <a class="logos" href="index.html">
+      <img class="bn-logo" src="img/benson-logo.png" alt="Benson">
+      <img class="kb-logo" src="img/kingberg-logo.png" alt="Kingberg">
+    </a>
+    <form class="search" onsubmit="return false">
+      <input type="search" placeholder="Пошук за назвою або артикулом, напр. BN-203">
+      <button class="btn" aria-label="Пошук">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg>
+      </button>
+    </form>
+    <div class="contacts">
+      <strong>+38 (098) 367-84-36</strong>
+      <strong>+38 (066) 012-35-51</strong>
+      <a class="btn btn-viber" href="#">Написати у Viber</a>
+    </div>
+  </div>
+</header>
+
+<nav class="mainnav">
+  <div class="wrap" data-catalog-nav></div>
+</nav>
+
+<div class="wrap layout">
+  <aside class="rail">
+    <div class="rail-card catalog">
+      <div class="rail-title">Каталог</div>
+      <nav class="cats" data-catalog-sidebar aria-label="Розділи каталогу"></nav>
+    </div>
+    <div class="rail-card">
+      <span class="rail-label">Наші бренди</span>
+      <div class="logo-slider side" aria-label="Бренди">
+        <div class="logo-track">
+          <a class="logo-slide" href="category.html?c=posud"><img src="img/brands/benson.png" alt="Benson"></a>
+          <a class="logo-slide" href="category.html?c=tekhnika"><img src="img/brands/kingberg.png" alt="Kingberg"></a>
+          <a class="logo-slide" href="category.html?c=posud"><img src="img/brands/haus-roland.png" alt="Haus Roland"></a>
+          <a class="logo-slide" href="category.html?c=tekhnika"><img src="img/brands/haley.png" alt="Haley"></a>
+          <a class="logo-slide" href="category.html?c=tekhnika"><img src="img/brands/sokany.png" alt="Sokany"></a>
+        </div>
+      </div>
+    </div>
+    <div class="rail-card help">
+      <img src="img/mascot/thinking.png" alt="">
+      <div><b>Не знайшли товар?</b><span>Бенсі допоможе підібрати</span><button class="rail-btn" data-open-call>Запитати Бенсі</button></div>
+    </div>
+  </aside>
+
+  <main>
+    <div class="brands">
+      <div class="brand-banner bn">
+        <img src="img/benson-logo.png" alt="Benson">
+        <div>
+          <p><b>Посуд і кухонні аксесуари</b><br>Каструлі, сковороди, чайники, ножі — понад 1000 позицій.</p>
+          <a class="btn btn-ghost" href="category.html?c=posud">Дивитись Benson</a>
+        </div>
+      </div>
+      <div class="brand-banner kb">
+        <img src="img/kingberg-logo.jpg" alt="Kingberg">
+        <div>
+          <p><b>Побутова техніка</b><br>Мультиварки, м'ясорубки, чайники, блендери.</p>
+          <a class="btn btn-ghost" href="category.html?c=tekhnika">Дивитись Kingberg</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="section-head">
+      <h2>Новинки посуду</h2>
+      <div class="head-right"><a href="category.html?c=new">Усі новинки →</a><button class="arrow" data-dir="-1" aria-label="Назад">‹</button><button class="arrow" data-dir="1" aria-label="Далі">›</button></div>
+    </div>
+    <div class="carousel" data-products="new-cookware"></div>
+
+    <!-- Підбірка цікавих товарів: light bento (1 featured + 4 compact), any brands, filled by app.js -->
+    <section class="bento" data-showcase="picks">
+      <div class="section-head">
+        <h2>Підбірка цікавих товарів</h2>
+        <a class="see-all" href="category.html?c=new">Усі новинки →</a>
+      </div>
+      <div class="sc-body"></div>
+    </section>
+
+    <!-- Акції: one section, tabs Посуд / Техніка, horizontal deal cards (filled by app.js) -->
+    <section class="deals" data-deals>
+      <div class="deals-head">
+        <div><span class="deals-kicker">🔥 Вигідні пропозиції</span><h2>Акції</h2></div>
+        <div class="deals-tabs" role="tablist">
+          <button class="on" role="tab" data-tab="sale-cookware">Посуд</button>
+          <button role="tab" data-tab="sale-appliances">Техніка</button>
+        </div>
+        <a class="deals-all" href="category.html?c=sale">Усі акції →</a>
+      </div>
+      <div class="deals-grid"></div>
+    </section>
+  </main>
+</div>
+
+<section class="wrap brand-strip-wrap">
+  <h2>Наші бренди</h2>
+  <!-- logos written once; app.js duplicates the set so the loop is seamless -->
+  <div class="logo-slider" aria-label="Бренди">
+    <div class="logo-track">
+      <a class="logo-slide" href="category.html?c=posud"><img src="img/brands/benson.png" alt="Benson"></a>
+      <a class="logo-slide" href="category.html?c=tekhnika"><img src="img/brands/kingberg.png" alt="Kingberg"></a>
+      <a class="logo-slide" href="category.html?c=posud"><img src="img/brands/haus-roland.png" alt="Haus Roland"></a>
+      <a class="logo-slide" href="category.html?c=tekhnika"><img src="img/brands/haley.png" alt="Haley"></a>
+      <a class="logo-slide" href="category.html?c=tekhnika"><img src="img/brands/sokany.png" alt="Sokany"></a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div>
+      <img class="logo-footer" src="img/benson-logo-light.png" alt="Benson">
+      <p>Оптовий постачальник посуду, кухонних аксесуарів і побутової техніки.</p>
+    </div>
+    <div>
+      <h5>Каталог</h5>
+      <a href="category.html?c=new">Новинки</a><a href="category.html?c=posud">Посуд</a><a href="category.html?c=aksesuary">Кухонні аксесуари</a><a href="category.html?c=tekhnika">Побутова техніка</a>
+    </div>
+    <div>
+      <h5>Інформація</h5>
+      <a href="#">Про нас</a><a href="#">Умови співпраці</a><a href="#">Доставка</a><a href="#">Контакти</a>
+    </div>
+    <div>
+      <h5>Контакти</h5>
+      <a href="tel:+380983678436">+38 (098) 367-84-36</a>
+      <a href="tel:+380660123551">+38 (066) 012-35-51</a>
+      <a href="mailto:bensonukraine@gmail.com">bensonukraine@gmail.com</a>
+    </div>
+  </div>
+  <div class="copy">© 2026 Benson. Усі права захищені. · <a href="admin.html" style="text-decoration:underline">Адмін-панель (прототип)</a> · <a href="mascot-usage.html" style="text-decoration:underline">Маскот Бенсі</a></div>
+</footer>
+
+<dialog id="announcement">
+  <button class="ann-close" aria-label="Закрити" onclick="this.closest('dialog').close()">×</button>
+  <div class="ann-head">
+    <div class="ann-mascot" data-clip="wave"></div>
+    <h3>Привіт! Я Бенсі 👋</h3>
+    <p>Ласкаво просимо до оптового інтернет-магазину Benson. Допоможу знайти потрібний посуд і техніку.</p>
+  </div>
+  <div class="ann-body">
+    <p class="ann-note">Працюємо тільки з оптовими покупцями. Мінімальне замовлення — уточнюйте у менеджера.</p>
+    <div class="ann-cols">
+      <div><b>Робочі години</b>Пн–Сб: 08:00–17:00<br>Неділя: вихідний</div>
+      <div><b>Доставка</b>Замовлення, отримане до 14:00, відправляємо наступного дня</div>
+    </div>
+    <button class="btn" onclick="this.closest('dialog').close()">Зрозуміло</button>
+    <p class="ann-demo">Прототип: текст, кольори та вмикання цього вікна редагуються в адмінці.</p>
+  </div>
+</dialog>
+
+<label class="demo-toggle"><input type="checkbox" id="prices"> Прототип: показати ціни (демо)</label>
+
+<script src="https://cdn.jsdelivr.net/npm/@masko/player@0.1/dist/masko-player.js"></script>
+<script src="data.js?v=1795260079"></script>
+<script src="app.js?v=1795260079"></script>
+</body>
+</html>

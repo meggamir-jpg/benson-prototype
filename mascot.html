@@ -1,0 +1,100 @@
+<!doctype html>
+<html lang="uk">
+<head>
+<meta charset="utf-8">
+<meta name="robots" content="noindex">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Маскот Benson — оберіть персонажа</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;700;800&display=swap" rel="stylesheet">
+<style>
+:root { --brand: #aa1f7a; --tint: #fbf0f6; --ink: #1f1f24; --muted: #6b6b76; --line: #e7e5ea; --bg: #f6f5f7; font-family: "Manrope", system-ui, sans-serif; color: var(--ink); }
+* { box-sizing: border-box; }
+body { margin: 0; background: var(--bg); line-height: 1.5; }
+.wrap { max-width: 1240px; margin: 0 auto; padding: 36px 20px 60px; }
+h1 { margin: 0 0 6px; font-size: 30px; }
+.lead { color: var(--muted); margin: 0 0 28px; max-width: 780px; }
+.grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
+.card { background: #fff; border: 1px solid var(--line); border-radius: 16px; overflow: hidden; display: flex; flex-direction: column; }
+.stage { background: radial-gradient(circle at 50% 55%, #fff 0, var(--tint) 75%); aspect-ratio: 1; display: grid; place-items: center; position: relative; }
+.stage img { width: 88%; animation: bob 3s ease-in-out infinite; filter: drop-shadow(0 18px 18px rgba(170,31,122,.18)); }
+@keyframes bob { 50% { transform: translateY(-8px); } }
+@media (prefers-reduced-motion: reduce) { .stage img { animation: none; } }
+.tag { position: absolute; top: 14px; left: 14px; background: var(--ink); color: #fff; font-weight: 800; font-size: 12px; padding: 4px 10px; border-radius: 999px; }
+.body { padding: 18px 20px 20px; display: flex; flex-direction: column; gap: 12px; flex: 1; }
+.body h2 { margin: 0; font-size: 22px; }
+.who { color: var(--brand); font-weight: 700; margin: -8px 0 0; }
+.body p { margin: 0; color: var(--muted); font-size: 14px; }
+.bgs { display: grid; grid-template-columns: repeat(3, 1fr); gap: 8px; }
+.bgs div { aspect-ratio: 1; border-radius: 10px; display: grid; place-items: center; }
+.bgs img { width: 80%; }
+.bgs small { display: block; text-align: center; color: var(--muted); font-size: 11px; margin-top: 2px; }
+.chat { display: flex; align-items: flex-end; gap: 10px; margin-top: auto; }
+.chat .av { width: 56px; height: 56px; flex: none; border-radius: 50%; background: var(--tint); border: 2px solid #fff; box-shadow: 0 6px 18px rgba(170,31,122,.3); overflow: hidden; }
+.chat .av img { width: 150%; margin: -8% 0 0 -25%; }
+.bubble { background: var(--ink); color: #fff; padding: 10px 14px; border-radius: 14px 14px 14px 4px; font-size: 13px; }
+.next { margin-top: 32px; background: #fff; border: 1px solid var(--line); border-radius: 14px; padding: 20px 22px; }
+.next h3 { margin: 0 0 8px; }
+.next ul { margin: 0; padding-left: 20px; color: var(--muted); }
+@media (max-width: 980px) { .grid { grid-template-columns: 1fr; } }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <h1>Маскот Benson — оберіть персонажа</h1>
+  <p class="lead">Три варіанти в м'якому 3D-стилі (згенеровано в Masko). Фон прозорий — персонаж стає на будь-який фон сайту. Обраного маскота ми «оживимо»: емоції (радіє, думає, шукає, розгублений) та короткі анімації для сайту.</p>
+
+  <div class="grid">
+    <div class="card">
+      <div class="stage"><span class="tag">A</span><img src="img/mascot-chayko.png" alt="Чайко"></div>
+      <div class="body">
+        <h2>Чайко</h2><p class="who">Емальований чайник</p>
+        <p>Одразу зрозуміло, що це посуд. Теплий, «домашній» образ, фірмовий колір.</p>
+        <div class="bgs">
+          <div style="background:#fff;border:1px solid var(--line)"><img src="img/mascot-chayko.png" alt=""></div>
+          <div style="background:#212121"><img src="img/mascot-chayko.png" alt=""></div>
+          <div style="background:#aa1f7a"><img src="img/mascot-chayko.png" alt=""></div>
+        </div>
+        <div class="chat"><div class="av"><img src="img/mascot-chayko.png" alt=""></div><div class="bubble">Привіт! Я Чайко ☕ Шукаєте чайник чи каструлю? Підкажу!</div></div>
+      </div>
+    </div>
+    <div class="card">
+      <div class="stage"><span class="tag">B</span><img src="img/mascot-benny.png" alt="Бенні"></div>
+      <div class="body">
+        <h2>Бенні</h2><p class="who">Будиночок з логотипу Benson</p>
+        <p>Найсильніший зв'язок з брендом — прямо з логотипу: віконце, бульбашки, фірмовий колір.</p>
+        <div class="bgs">
+          <div style="background:#fff;border:1px solid var(--line)"><img src="img/mascot-benny.png" alt=""></div>
+          <div style="background:#212121"><img src="img/mascot-benny.png" alt=""></div>
+          <div style="background:#aa1f7a"><img src="img/mascot-benny.png" alt=""></div>
+        </div>
+        <div class="chat"><div class="av"><img src="img/mascot-benny.png" alt=""></div><div class="bubble">Привіт! Я Бенні 👋 Допоможу знайти потрібний посуд.</div></div>
+      </div>
+    </div>
+    <div class="card">
+      <div class="stage"><span class="tag">C</span><img src="img/mascot-kukharyk.png" alt="Бенсі"></div>
+      <div class="body">
+        <h2>Бенсі ✓ обрано</h2><p class="who">Каструля-шеф з гарнітурою</p>
+        <p>Виглядає як консультант «на зв'язку» — найкраще пасує до ролі AI-помічника. Підходить і для HoReCa.</p>
+        <div class="bgs">
+          <div style="background:#fff;border:1px solid var(--line)"><img src="img/mascot-kukharyk.png" alt=""></div>
+          <div style="background:#212121"><img src="img/mascot-kukharyk.png" alt=""></div>
+          <div style="background:#aa1f7a"><img src="img/mascot-kukharyk.png" alt=""></div>
+        </div>
+        <div class="chat"><div class="av"><img src="img/mascot-kukharyk.png" alt=""></div><div class="bubble">Бенсі на зв'язку 👨‍🍳 Що шукаємо сьогодні?</div></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="next">
+    <p style="margin:0 0 12px"><a href="mascot-usage.html" style="color:var(--brand);font-weight:800">→ Бенсі: анімації та як він виглядає на сайті</a></p>
+    <h3>Що далі, коли оберемо</h3>
+    <ul>
+      <li>Набір емоцій: вітається, радіє, думає, шукає, розгублений (для «нічого не знайдено» та сторінки 404)</li>
+      <li>Короткі анімації (≈5 с): махає рукою при вході на сайт, «думає», поки AI-помічник шукає товар</li>
+      <li>Аватар для кнопки чату, стікери для Viber, картинки для соцмереж і друку</li>
+    </ul>
+  </div>
+</div>
+</body>
+</html>

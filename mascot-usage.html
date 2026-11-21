@@ -1,0 +1,245 @@
+<!doctype html>
+<html lang="uk">
+<head>
+<meta charset="utf-8">
+<meta name="robots" content="noindex">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Бенсі — маскот Benson: анімації та де вони на сайті</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;700;800&display=swap" rel="stylesheet">
+<style>
+:root { --brand: #aa1f7a; --brand-dark: #8a1863; --tint: #fbf0f6; --ink: #1f1f24; --muted: #6b6b76; --line: #e7e5ea; --bg: #f6f5f7; --kb: #212121; font-family: "Manrope", system-ui, sans-serif; color: var(--ink); }
+* { box-sizing: border-box; }
+body { margin: 0; background: var(--bg); line-height: 1.5; }
+a { color: inherit; }
+.wrap { max-width: 1240px; margin: 0 auto; padding: 32px 20px 64px; }
+.back { color: var(--brand); font-weight: 700; text-decoration: none; font-size: 14px; }
+h1 { margin: 8px 0 6px; font-size: 32px; }
+h2 { margin: 44px 0 6px; font-size: 22px; }
+.lead, .sub { color: var(--muted); margin: 0 0 20px; max-width: 820px; }
+.btn { display: inline-flex; align-items: center; justify-content: center; padding: 10px 16px; border-radius: 8px; border: 0; background: var(--brand); color: #fff; font: inherit; font-weight: 700; cursor: pointer; text-decoration: none; }
+.btn.ghost { background: #fff; color: var(--brand); box-shadow: inset 0 0 0 1.5px var(--brand); }
+
+/* the Masko player fills whatever box it is mounted in */
+.mascot { width: 100%; height: 100%; }
+
+/* animations */
+.anims { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; }
+.anim { background: #fff; border: 1px solid var(--line); border-radius: 16px; overflow: hidden; }
+.anim .stage { aspect-ratio: 1; background: radial-gradient(circle at 50% 55%, #fff 0, var(--tint) 75%); padding: 18px; position: relative; }
+.anim .stage.dark { background: radial-gradient(circle at 50% 55%, #333 0, var(--kb) 75%); }
+.chip { position: absolute; top: 12px; left: 12px; background: var(--ink); color: #fff; font-size: 12px; font-weight: 800; padding: 3px 10px; border-radius: 999px; z-index: 1; }
+.bgtoggle { position: absolute; top: 10px; right: 10px; z-index: 1; border: 1px solid var(--line); background: #fff; border-radius: 999px; padding: 4px 10px; font: inherit; font-size: 12px; font-weight: 700; cursor: pointer; }
+.anim .body { padding: 16px 18px 18px; }
+.anim h3 { margin: 0 0 4px; font-size: 18px; }
+.anim p { margin: 0; color: var(--muted); font-size: 14px; }
+.where { margin-top: 10px; font-size: 13px; background: var(--tint); color: var(--brand-dark); padding: 8px 10px; border-radius: 8px; font-weight: 600; }
+
+/* poses */
+.poses { display: grid; grid-template-columns: repeat(6, 1fr); gap: 12px; }
+.pose { background: #fff; border: 1px solid var(--line); border-radius: 14px; padding: 10px 10px 12px; text-align: center; }
+.pose img { width: 100%; aspect-ratio: 1; object-fit: contain; }
+.pose b { display: block; font-size: 14px; }
+.pose small { color: var(--muted); font-size: 12px; line-height: 1.35; display: block; }
+
+/* site mock-ups */
+.mocks { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+.mock h3 { margin: 0 0 8px; font-size: 16px; }
+.browser { background: #fff; border: 1px solid var(--line); border-radius: 14px; overflow: hidden; box-shadow: 0 10px 30px rgba(31,31,36,.06); }
+.bar { display: flex; align-items: center; gap: 6px; padding: 9px 12px; background: #f1eff4; border-bottom: 1px solid var(--line); }
+.bar i { width: 10px; height: 10px; border-radius: 50%; background: #d9d6de; }
+.bar span { margin-left: 10px; flex: 1; background: #fff; border-radius: 6px; font-size: 12px; color: var(--muted); padding: 3px 10px; }
+.screen { position: relative; height: 440px; background: var(--bg); overflow: hidden; }
+.fake-site { position: absolute; inset: 0; padding: 0; }
+.fake-site .hdr { height: 54px; background: #fff; border-bottom: 1px solid var(--line); display: flex; align-items: center; gap: 12px; padding: 0 16px; }
+.fake-site .hdr img { height: 30px; }
+.fake-site .nav { height: 30px; background: var(--brand); }
+.fake-site .tiles { display: grid; grid-template-columns: repeat(4, 1fr); gap: 10px; padding: 14px; }
+.fake-site .tiles div { background: #fff; border: 1px solid var(--line); border-radius: 8px; aspect-ratio: .8; }
+
+/* 1: welcome popup */
+.shade { position: absolute; inset: 0; background: rgba(20,20,24,.5); display: grid; place-items: center; }
+.welcome { width: 300px; background: #fff; border-radius: 16px; text-align: center; padding: 0 20px 18px; position: relative; margin-top: 70px; }
+.welcome .m { width: 150px; height: 150px; margin: -95px auto 0; }
+.welcome h4 { margin: 2px 0 6px; font-size: 18px; }
+.welcome p { margin: 0 0 14px; color: var(--muted); font-size: 13px; }
+
+/* 2: chat assistant */
+.chat { position: absolute; right: 14px; bottom: 84px; width: 300px; background: #fff; border-radius: 16px; box-shadow: 0 20px 50px rgba(0,0,0,.18); overflow: hidden; }
+.chat-head { display: flex; align-items: center; gap: 10px; padding: 10px 12px; background: var(--brand); color: #fff; }
+.chat-head .av { width: 40px; height: 40px; border-radius: 50%; background: #fff; overflow: hidden; flex: none; }
+.chat-head b { display: block; font-size: 14px; }
+.chat-head small { opacity: .85; font-size: 11px; }
+.msgs { padding: 10px 12px; display: grid; gap: 8px; font-size: 12.5px; }
+.me { justify-self: end; background: var(--brand); color: #fff; padding: 7px 11px; border-radius: 12px 12px 4px 12px; max-width: 80%; }
+.bot { display: flex; gap: 8px; align-items: flex-end; }
+.bot .think { width: 52px; height: 52px; flex: none; }
+.bot .txt { background: var(--bg); padding: 7px 11px; border-radius: 12px 12px 12px 4px; }
+.dots::after { content: "…"; animation: dots 1.2s steps(3) infinite; }
+.results { display: grid; grid-template-columns: 1fr 1fr; gap: 6px; }
+.results div { border: 1px solid var(--line); border-radius: 8px; padding: 5px; font-size: 11px; line-height: 1.3; }
+.results img { width: 100%; height: 54px; object-fit: contain; display: block; }
+.fab { position: absolute; right: 14px; bottom: 14px; width: 62px; height: 62px; border-radius: 50%; background: #fff; box-shadow: 0 8px 24px rgba(170,31,122,.35); border: 3px solid var(--brand); overflow: hidden; }
+.fab-tip { position: absolute; right: 86px; bottom: 28px; background: var(--ink); color: #fff; font-size: 12px; padding: 6px 10px; border-radius: 10px 10px 2px 10px; }
+
+/* 3–6: states */
+.state { position: absolute; inset: 0; display: grid; place-items: center; text-align: center; padding: 20px; }
+.state img { width: 170px; }
+.state h4 { margin: 6px 0 4px; font-size: 18px; }
+.state p { margin: 0 0 12px; color: var(--muted); font-size: 13px; max-width: 320px; }
+.state .row { display: flex; gap: 8px; justify-content: center; }
+.drawer { position: absolute; top: 0; right: 0; bottom: 0; width: 270px; background: #fff; box-shadow: -10px 0 30px rgba(0,0,0,.12); display: flex; flex-direction: column; }
+.drawer .dh { padding: 12px 14px; border-bottom: 1px solid var(--line); font-weight: 800; display: flex; justify-content: space-between; }
+.drawer .db { flex: 1; display: grid; place-items: center; text-align: center; padding: 14px; }
+.drawer img { width: 130px; display: block; margin: 0 auto 6px; }
+.drawer p { color: var(--muted); font-size: 13px; margin: 4px 0 0; }
+.searchbar { position: absolute; top: 70px; left: 16px; right: 16px; background: #fff; border: 1.5px solid var(--brand); border-radius: 8px; padding: 8px 12px; font-size: 13px; }
+.toast-ok { position: absolute; inset: 0; display: grid; place-items: center; background: rgba(20,20,24,.4); }
+.toast-ok .card { background: #fff; border-radius: 16px; padding: 16px 22px 20px; text-align: center; width: 290px; }
+.toast-ok img { width: 140px; }
+
+@keyframes dots { from { clip-path: inset(0 100% 0 0); } to { clip-path: inset(0 0 0 0); } }
+@media (max-width: 1000px) { .anims, .mocks { grid-template-columns: 1fr; } .poses { grid-template-columns: repeat(3, 1fr); } }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <a class="back" href="index.html">← До прототипу сайту</a>
+  <h1>Бенсі — маскот Benson</h1>
+  <p class="lead">Анімації, пози та як Бенсі виглядатиме на сайті. Усі файли з прозорим фоном, тож Бенсі стає на будь-який фон — світлий чи темний. Анімації відтворюються Masko-плеєром і крутяться без кінця.</p>
+
+  <h2>Анімації</h2>
+  <p class="sub">Короткі цикли (≈4 с). Натисніть «Темний фон», щоб перевірити прозорість.</p>
+  <div class="anims">
+    <div class="anim">
+      <div class="stage"><span class="chip">Привітання</span><button class="bgtoggle">Темний фон</button><div class="mascot" data-clip="wave"></div></div>
+      <div class="body"><h3>Махає рукою</h3><p>Радісно вітається, підстрибує на місці.</p><div class="where">📍 Вітальне вікно при першому вході на сайт, банер на головній</div></div>
+    </div>
+    <div class="anim">
+      <div class="stage"><span class="chip">Очікування</span><button class="bgtoggle">Темний фон</button><div class="mascot" data-clip="idle"></div></div>
+      <div class="body"><h3>Спокійно чекає</h3><p>Ледь погойдується, дихає, кліпає.</p><div class="where">📍 Кнопка AI-помічника в кутку кожної сторінки</div></div>
+    </div>
+    <div class="anim">
+      <div class="stage"><span class="chip">Думає</span><button class="bgtoggle">Темний фон</button><div class="mascot" data-clip="thinking"></div></div>
+      <div class="body"><h3>Думає</h3><p>Постукує по підборіддю, роздивляється.</p><div class="where">📍 Поки AI-помічник шукає товари в каталозі</div></div>
+    </div>
+  </div>
+
+  <h2>Пози (картинки)</h2>
+  <p class="sub">Статичні емоції для різних ситуацій на сайті. Згодом будь-яку з них можна «оживити» в анімацію.</p>
+  <div class="poses">
+    <div class="pose"><img src="img/mascot/waving.png" alt=""><b>Вітається</b><small>Попап, банери, соцмережі</small></div>
+    <div class="pose"><img src="img/mascot/standing.png" alt=""><b>Стоїть</b><small>Порожні списки, аватар</small></div>
+    <div class="pose"><img src="img/mascot/thinking.png" alt=""><b>Думає</b><small>Завантаження, пошук</small></div>
+    <div class="pose"><img src="img/mascot/searching.png" alt=""><b>Шукає</b><small>Сторінка 404</small></div>
+    <div class="pose"><img src="img/mascot/confused.png" alt=""><b>Розгублений</b><small>«Нічого не знайдено»</small></div>
+    <div class="pose"><img src="img/mascot/cheering.png" alt=""><b>Радіє</b><small>Заявку надіслано</small></div>
+  </div>
+
+  <h2>Як це виглядає на сайті</h2>
+  <p class="sub">Макети реальних місць, де з'являється Бенсі.</p>
+  <div class="mocks">
+
+    <div class="mock">
+      <h3>1. Вітальне вікно (оголошення)</h3>
+      <div class="browser"><div class="bar"><i></i><i></i><i></i><span>benson.com.ua</span></div>
+        <div class="screen">
+          <div class="fake-site"><div class="hdr"><img src="img/benson-logo.png" alt=""></div><div class="nav"></div><div class="tiles"><div></div><div></div><div></div><div></div></div></div>
+          <div class="shade"><div class="welcome">
+            <div class="m mascot" data-clip="wave"></div>
+            <h4>Вітаємо в Benson!</h4>
+            <p>Оптовий каталог посуду та техніки. Ціни — за запитом у менеджера.</p>
+            <span class="btn">Перейти до каталогу</span>
+          </div></div>
+        </div></div>
+    </div>
+
+    <div class="mock">
+      <h3>2. AI-помічник у чаті</h3>
+      <div class="browser"><div class="bar"><i></i><i></i><i></i><span>benson.com.ua/catalog/</span></div>
+        <div class="screen">
+          <div class="fake-site"><div class="hdr"><img src="img/benson-logo.png" alt=""></div><div class="nav"></div><div class="tiles"><div></div><div></div><div></div><div></div></div></div>
+          <div class="chat">
+            <div class="chat-head"><div class="av mascot" data-clip="idle"></div><div><b>Бенсі</b><small>AI-помічник · онлайн</small></div></div>
+            <div class="msgs">
+              <div class="me">Шукаю сковороду 28 см з кришкою</div>
+              <div class="bot"><div class="think mascot" data-clip="thinking"></div><div class="txt">Шукаю в каталозі<span class="dots"></span></div></div>
+              <div class="bot"><div style="width:52px;flex:none"></div><div class="txt">Знайшов 2 варіанти:
+                <div class="results" style="margin-top:6px"><div><img src="img/p1.jpg" alt="">BN-832 Сковорода 28 см</div><div><img src="img/p3.jpg" alt="">BN-213 Набір каструль</div></div></div></div>
+            </div>
+          </div>
+          <div class="fab mascot" data-clip="idle"></div>
+        </div></div>
+    </div>
+
+    <div class="mock">
+      <h3>3. Пошук: нічого не знайдено</h3>
+      <div class="browser"><div class="bar"><i></i><i></i><i></i><span>benson.com.ua/search/?q=сотейник 5 л</span></div>
+        <div class="screen">
+          <div class="fake-site"><div class="hdr"><img src="img/benson-logo.png" alt=""></div><div class="nav"></div></div>
+          <div class="searchbar">сотейник 5 л</div>
+          <div class="state" style="top:60px"><div>
+            <img src="img/mascot/confused.png" alt="">
+            <h4>Нічого не знайшли 🤔</h4>
+            <p>За запитом «сотейник 5 л» товарів немає. Спробуйте інше слово або запитайте Бенсі в чаті.</p>
+            <div class="row"><span class="btn">Запитати Бенсі</span><span class="btn ghost">Весь каталог</span></div>
+          </div></div>
+        </div></div>
+    </div>
+
+    <div class="mock">
+      <h3>4. Сторінка 404</h3>
+      <div class="browser"><div class="bar"><i></i><i></i><i></i><span>benson.com.ua/stara-storinka/</span></div>
+        <div class="screen">
+          <div class="state"><div>
+            <img src="img/mascot/searching.png" alt="">
+            <h4>Сторінка загубилась, як кришка від каструлі</h4>
+            <p>Бенсі шукав усюди, але такої сторінки немає. Можливо, її перенесли.</p>
+            <div class="row"><span class="btn">На головну</span><span class="btn ghost">Пошук товарів</span></div>
+          </div></div>
+        </div></div>
+    </div>
+
+    <div class="mock">
+      <h3>5. Обране порожнє</h3>
+      <div class="browser"><div class="bar"><i></i><i></i><i></i><span>benson.com.ua</span></div>
+        <div class="screen">
+          <div class="fake-site"><div class="hdr"><img src="img/benson-logo.png" alt=""></div><div class="nav"></div><div class="tiles"><div></div><div></div><div></div><div></div></div></div>
+          <div class="drawer"><div class="dh">Обране <span>×</span></div>
+            <div class="db"><div><img src="img/mascot/standing.png" alt=""><b>Тут поки порожньо</b><p>Натисніть ♡ на товарі — а потім надішліть список нам у Viber.</p></div></div></div>
+        </div></div>
+    </div>
+
+    <div class="mock">
+      <h3>6. Заявку на дзвінок надіслано</h3>
+      <div class="browser"><div class="bar"><i></i><i></i><i></i><span>benson.com.ua</span></div>
+        <div class="screen">
+          <div class="fake-site"><div class="hdr"><img src="img/benson-logo.png" alt=""></div><div class="nav"></div><div class="tiles"><div></div><div></div><div></div><div></div></div></div>
+          <div class="toast-ok"><div class="card">
+            <img src="img/mascot/cheering.png" alt="">
+            <h4 style="margin:4px 0">Дякуємо!</h4>
+            <p style="margin:0;color:var(--muted);font-size:13px">Менеджер передзвонить вам найближчим часом.</p>
+          </div></div>
+        </div></div>
+    </div>
+
+  </div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/@masko/player@0.1/dist/masko-player.js"></script>
+<script>
+// Every [data-clip] box gets a Masko player looping that animation (WebM for Chrome/Firefox, HEVC for Safari).
+const still = matchMedia("(prefers-reduced-motion: reduce)").matches;
+document.querySelectorAll("[data-clip]").forEach((el) => {
+  const n = el.dataset.clip;
+  MaskoPlayer.mount(el, { clip: { webm: `img/mascot/${n}.webm`, hevc: `img/mascot/${n}.mov` }, autoPlay: !still });
+});
+// Light/dark background check for the animation cards
+document.querySelectorAll(".bgtoggle").forEach((b) => b.addEventListener("click", () => {
+  const stage = b.closest(".stage");
+  stage.classList.toggle("dark");
+  b.textContent = stage.classList.contains("dark") ? "Світлий фон" : "Темний фон";
+}));
+</script>
+</body>
+</html>
